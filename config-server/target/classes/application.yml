@@ -1,12 +1,19 @@
 server:
-  port: 8080
+  port: 8888
 spring:
   application:
     name: config-server
+  profiles:
+    active: native
+  #    active: git
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/kevin123-static/spring-cloud.git
-          username: kevin123-static
-          password: likunwen123
+        native:
+          search-locations: file:D:/spring-cloud/gitHub/spring-cloud/config-server/src/main/resources/properties/
+#        git:
+#          uri: https://github.com/kevin123-static/spring-cloud/
+#          username: kevin123-static
+#          password: likunwen123
+#          search-paths: properties
+#          default-label: main

@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kevin123-static/spring-cloud.git
+          username: kevin123-static
+          password: likunwen123

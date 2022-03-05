@@ -1,0 +1,28 @@
+server:
+  port: 8800
+spring:
+  jpa:
+    show-sql: true
+  application:
+    name: provider-user
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+        include: '*'
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kevin:kevin123@peer2:8762/eureka/,http://kevin:kevin123@peer1:8761/eureka/
+    instance:
+      prefer-ip-address: true
